@@ -110,6 +110,11 @@
     "yjs": "^13.5.40"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@jupyterlab/completer": "workspace:^",
+    "@mui/icons-material": "^5.15.18",
+    "@mui/material": "^5.15.18",
     "@typescript-eslint/eslint-plugin": "~6.13.2",
     "@typescript-eslint/parser": "~6.13.2",
     "eslint": "~8.55.0",
@@ -119,15 +124,17 @@
     "eslint-plugin-react": "~7.33.2",
     "prettier": "~3.0.0",
     "stylelint": "^15.10.1",
-    "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended": "^13.0.0",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-csstree-validator": "^3.0.0",
     "stylelint-prettier": "^4.0.0"
   },
   "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
     "lerna": "^7.1.4",
     "typedoc": "~0.25.12",
-    "typedoc-plugin-mdn-links": "^3.1.20"
+    "typedoc-plugin-mdn-links": "^3.1.20",
+    "typescript": "^5.4.5"
   }
 }

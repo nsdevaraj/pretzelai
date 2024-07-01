@@ -1,6 +1,6 @@
 {
   "name": "@jupyterlab/application-top",
-  "version": "4.2.0",
+  "version": "4.2.6",
   "private": true,
   "license": "BSD-3-Clause",
   "scripts": {
@@ -23,18 +23,18 @@
     "@jupyter/react-components": "^0.15.3",
     "@jupyter/web-components": "^0.15.3",
     "@jupyter/ydoc": "^2.0.1",
-    "@jupyterlab/application": "~4.2.0",
-    "@jupyterlab/application-extension": "~4.2.0",
+    "@jupyterlab/application": "file:../../packages/application",
+    "@jupyterlab/application-extension": "file:../../packages/application-extension",
     "@jupyterlab/apputils": "~4.3.0",
-    "@jupyterlab/apputils-extension": "~4.2.0",
+    "@jupyterlab/apputils-extension": "file:../../packages/apputils-extension",
     "@jupyterlab/attachments": "~4.2.0",
     "@jupyterlab/cell-toolbar": "~4.2.0",
     "@jupyterlab/cell-toolbar-extension": "~4.2.0",
     "@jupyterlab/cells": "~4.2.0",
     "@jupyterlab/celltags-extension": "~4.2.0",
     "@jupyterlab/codeeditor": "~4.2.0",
-    "@jupyterlab/codemirror": "~4.2.0",
-    "@jupyterlab/codemirror-extension": "~4.2.0",
+    "@jupyterlab/codemirror": "file:../../packages/codemirror",
+    "@jupyterlab/codemirror-extension": "file:../../packages/codemirror-extension",
     "@jupyterlab/completer": "~4.2.0",
     "@jupyterlab/completer-extension": "~4.2.0",
     "@jupyterlab/console": "~4.2.0",
@@ -55,7 +55,7 @@
     "@jupyterlab/filebrowser-extension": "~4.2.0",
     "@jupyterlab/fileeditor": "~4.2.0",
     "@jupyterlab/fileeditor-extension": "~4.2.0",
-    "@jupyterlab/help-extension": "~4.2.0",
+    "@jupyterlab/help-extension": "file:../../packages/help-extension",
     "@jupyterlab/htmlviewer": "~4.2.0",
     "@jupyterlab/htmlviewer-extension": "~4.2.0",
     "@jupyterlab/hub-extension": "~4.2.0",
@@ -146,12 +146,12 @@
     "yjs": "^13.5.40"
   },
   "dependencies": {
-    "@jupyterlab/application": "~4.2.0",
-    "@jupyterlab/application-extension": "~4.2.0",
-    "@jupyterlab/apputils-extension": "~4.2.0",
+    "@jupyterlab/application": "file:../../packages/application",
+    "@jupyterlab/application-extension": "file:../../packages/application-extension",
+    "@jupyterlab/apputils-extension": "file:../../packages/apputils-extension",
     "@jupyterlab/cell-toolbar-extension": "~4.2.0",
     "@jupyterlab/celltags-extension": "~4.2.0",
-    "@jupyterlab/codemirror-extension": "~4.2.0",
+    "@jupyterlab/codemirror-extension": "file:../../packages/codemirror-extension",
     "@jupyterlab/completer-extension": "~4.2.0",
     "@jupyterlab/console-extension": "~4.2.0",
     "@jupyterlab/coreutils": "~6.2.0",
@@ -162,7 +162,7 @@
     "@jupyterlab/extensionmanager-extension": "~4.2.0",
     "@jupyterlab/filebrowser-extension": "~4.2.0",
     "@jupyterlab/fileeditor-extension": "~4.2.0",
-    "@jupyterlab/help-extension": "~4.2.0",
+    "@jupyterlab/help-extension": "file:../../packages/help-extension",
     "@jupyterlab/htmlviewer-extension": "~4.2.0",
     "@jupyterlab/hub-extension": "~4.2.0",
     "@jupyterlab/imageviewer-extension": "~4.2.0",
@@ -228,7 +228,7 @@
   },
   "jupyterlab": {
     "name": "JupyterLab",
-    "version": "4.2.0",
+    "version": "4.2.6",
     "extensions": {
       "@jupyterlab/application-extension": "",
       "@jupyterlab/apputils-extension": "",
@@ -354,9 +354,7 @@
       "react-dom",
       "yjs"
     ],
-    "linkedPackages": {
-      "@jupyterlab/pretzelai-extension": "../../packages/pretzelai-extension"
-    },
+    "linkedPackages": {},
     "staticDir": "../static"
   }
 }

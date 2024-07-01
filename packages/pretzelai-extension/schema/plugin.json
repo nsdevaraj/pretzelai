@@ -7,11 +7,7 @@
       "type": "string",
       "title": "AI Service",
       "description": "Select the AI service to use for AI operations.",
-      "enum": [
-        "OpenAI API key",
-        "Use Pretzel AI Server",
-        "Use Azure API"
-      ],
+      "enum": ["OpenAI API key", "Use Pretzel AI Server", "Use Azure API"],
       "default": "Use Pretzel AI Server"
     },
     "openAiSettings": {
@@ -26,9 +22,42 @@
         "openAiBaseUrl": {
           "type": "string",
           "title": "Base URL",
-          "description": "(Optional) If your company has an OpenAI service, enter the URL for your company's OpenAI service (e.g., https://api.openai.com/v1/).",
+          "description": "(Optional) If your company uses OpenAI Enterprise, enter the URL for your company's OpenAI service (e.g., https://api.openai.com/v1/).",
           "default": ""
+        },
+        "openAiModel": {
+          "type": "string",
+          "title": "OpenAI Model",
+          "description": "Select the OpenAI model to be used for AI completions. Only works with your OpenAI API key.",
+          "enum": ["gpt-4o", "gpt-4-turbo", "gpt-3.5-turbo"],
+          "default": "gpt-4o"
         }
+      }
+    },
+    "inlineCopilotSettings": {
+      "type": "object",
+      "title": "Inline AI Copilot auto-complete",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "title": "Enable inline AI Copilot auto-complete"
+        },
+        "provider": {
+          "type": "string",
+          "title": "Which AI model provider to use",
+          "description": "Recommended: Pretzel AI (no API key required) or Mistral (API key required)",
+          "enum": ["Pretzel AI", "Mistral", "OpenAI"]
+        },
+        "mistralApiKey": {
+          "type": "string",
+          "title": "Mistral API Key",
+          "description": "Go to https://console.mistral.ai/api-keys/ to create an API Key"
+        }
+      },
+      "default": {
+        "enabled": true,
+        "provider": "Pretzel AI",
+        "mistralApiKey": ""
       }
     },
     "azureSettings": {
@@ -51,6 +80,14 @@
           "default": ""
         }
       }
+    },
+    "codeMatchThreshold": {
+      "type": "number",
+      "title": "Code Match Threshold",
+      "description": "The threshold for code similarity matching, between 0 and 100. High values result in only highly similar code being matched.",
+      "minimum": 0,
+      "maximum": 100,
+      "default": 20
     },
     "posthogPromptTelemetry": {
       "type": "boolean",

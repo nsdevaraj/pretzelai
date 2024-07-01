@@ -1,0 +1,371 @@
+/*
+ * Copyright (c) Pretzel AI GmbH.
+ * This file is part of the Pretzel project and is licensed under the
+ * GNU Affero General Public License version 3.
+ * See the LICENSE_AGPLv3 file at the root of the project for the full license text.
+ * Contributions by contributors listed in the PRETZEL_CONTRIBUTORS file (found at
+ * the root of the project) are licensed under AGPLv3.
+ */
+
+.fix-error-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: var(--jp-ui-padding, 5px 10px);
+  background-color: var(--jp-brand-color1);
+  color: var(--jp-ui-inverse-font-color1);
+  border: none;
+  border-radius: var(--jp-border-radius, 4px);
+  cursor: pointer;
+}
+
+.ask-ai-button-container {
+  position: absolute;
+  top: 10px;
+  right: 190px;
+  z-index: 1000;
+}
+
+.ask-ai-button {
+  background-color: var(--jp-brand-color1);
+  color: var(--jp-ui-inverse-font-color1);
+  border-radius: var(--jp-border-radius, 5px);
+  border: none;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-size: var(--jp-ui-font-size1, 12px);
+}
+
+.ask-ai-button-container .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-40%);
+  background-color: var(--jp-layout-color1);
+  color: var(--jp-ui-font-color1);
+  padding: 5px;
+  border-radius: var(--jp-border-radius);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  border: 1px solid var(--jp-border-color1);
+  visibility: hidden;
+}
+
+.status-element {
+  margin-left: 70px;
+  color: var(--jp-ui-font-color1);
+}
+.cm-editor .cm-cursor {
+  border-left-color: var(--jp-editor-cursor-color);
+}
+
+.input-container {
+  margin-top: var(--jp-ui-margin, 10px);
+  margin-left: 72px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field-buttons-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.pretzelInputField {
+  border: 1px solid var(--jp-border-color1);
+}
+
+.submit-button-container,
+.remove-button-container,
+.prompt-history-button-container,
+.submit-button-container button,
+.remove-button-container button,
+.prompt-history-button-container button,
+.edit-prompt-button-container button {
+  position: relative;
+}
+
+.pretzelInputSubmitButton {
+  background-color: var(--jp-brand-color1);
+  border-radius: var(--jp-border-radius, 5px);
+  border: none;
+  max-width: 100px;
+  min-height: 25px;
+  margin-top: var(--jp-ui-margin, 10px);
+  margin-right: var(--jp-ui-margin, 10px);
+  color: var(--jp-ui-inverse-font-color1);
+}
+
+.remove-button {
+  background-color: var(--jp-error-color1);
+  border-radius: var(--jp-border-radius, 5px);
+  border: none;
+  max-width: 100px;
+  min-height: 25px;
+  margin-top: var(--jp-ui-margin, 10px);
+  margin-right: var(--jp-ui-margin, 10px);
+  color: var(--jp-ui-inverse-font-color1);
+}
+
+.prompt-history-button {
+  background-color: var(--jp-layout-color0);
+  color: var(--jp-ui-font-color1);
+  padding: 0px;
+  border: none;
+  border-radius: var(--jp-border-radius);
+  margin-top: var(--jp-ui-margin, 10px);
+}
+
+.input-field-buttons-container div .tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-40%);
+  background-color: var(--jp-layout-color1);
+  color: var(--jp-ui-font-color1);
+  padding: 5px;
+  border-radius: var(--jp-border-radius);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  border: 1px solid var(--jp-border-color1);
+  z-index: 1000; /* Ensure the tooltip is above other elements */
+}
+
+.accept-and-run-button,
+.accept-button,
+.reject-button,
+.edit-prompt-button,
+.pretzelInputSubmitButton,
+.remove-button {
+  font-family: var(--body-font);
+  border-radius: var(--jp-border-radius, 5px);
+  border: none;
+  padding: var(--jp-ui-padding, 5px 10px);
+  margin-top: var(--jp-ui-margin, 10px);
+  margin-right: var(--jp-ui-margin, 10px);
+  cursor: pointer;
+  font-size: var(--jp-ui-font-size1, 12px);
+}
+
+.accept-and-run-button,
+.accept-button,
+.pretzelInputSubmitButton {
+  background-color: var(--jp-brand-color1);
+  color: var(--jp-ui-inverse-font-color1);
+}
+
+.reject-button,
+.remove-button {
+  background-color: var(--jp-error-color1);
+  color: var(--jp-ui-inverse-font-color1);
+}
+
+.edit-prompt-button {
+  background-color: var(--jp-success-color1);
+  color: var(--jp-ui-inverse-font-color1);
+}
+
+/* Update tooltip styles */
+.accept-and-run-button-container,
+.accept-button-container,
+.reject-button-container,
+.submit-button-container,
+.remove-button-container,
+.edit-prompt-button-container {
+  position: relative;
+}
+
+.accept-and-run-button-container .tooltip,
+.accept-button-container .tooltip,
+.reject-button-container .tooltip,
+.submit-button-container .tooltip,
+.remove-button-container .tooltip,
+.edit-prompt-button-container .tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-35%);
+  background-color: var(--jp-layout-color1);
+  color: var(--jp-ui-font-color1);
+  padding: 5px;
+  border-radius: var(--jp-border-radius);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  border: 1px solid var(--jp-border-color1);
+  z-index: 1000;
+}
+
+.accept-and-run-button-container .tooltip {
+  top: -70px !important;
+}
+
+.diff-buttons-container {
+  margin-left: 70px;
+  display: flex;
+  flex-direction: row;
+  outline: none;
+}
+
+div.pretzelInputField > .cm-editor {
+  height: 100px;
+  color: var(--jp-ui-font-color1);
+  background-color: var(--jp-layout-color1);
+}
+
+.chat-sidepanel {
+  min-width: 20vw !important;
+}
+
+/* splash screen styles */
+
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.splash-content {
+  background: var(--jp-layout-color1, white);
+  padding: var(--jp-ui-padding, 30px);
+  border-radius: var(--jp-border-radius, 15px);
+  text-align: left;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.splash-content h1 {
+  margin-top: 0;
+  font-family: var(--jp-ui-font-family);
+  color: var(--jp-ui-font-color1);
+}
+
+.splash-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--jp-ui-margin, 20px);
+}
+
+.splash-buttons .button {
+  margin-left: var(--jp-ui-margin, 10px);
+  padding: var(--jp-ui-padding, 10px 20px);
+  border: none;
+  border-radius: var(--jp-border-radius, 5px);
+  cursor: pointer;
+  font-size: var(--jp-ui-font-size1, 16px);
+}
+
+.splash-buttons .button-red {
+  margin: auto;
+  padding: var(--jp-ui-padding, 10px 20px);
+  border-radius: var(--jp-border-radius, 5px);
+  cursor: pointer;
+  font-size: var(--jp-ui-font-size1, 16px);
+  display: block;
+  width: fit-content;
+  background-color: #ffcccc;
+  color: black;
+}
+
+#splash-accept {
+  background-color: var(--jp-success-color1, #4caf50);
+  color: var(--jp-ui-inverse-font-color1, white);
+}
+
+#splash-reject {
+  background-color: transparent;
+  color: var(--jp-ui-font-color1, black);
+}
+
+.splash-content a {
+  text-decoration: underline;
+}
+
+.jp-pretzelai-rendermime-markdown .jp-RenderedHTMLCommon {
+  padding-right: 0;
+}
+
+#jp-right-stack .jp-pretzelai-rendermime-markdown pre {
+  background-color: var(--jp-cell-editor-background);
+  overflow-x: auto;
+  white-space: pre;
+  margin: 0;
+  padding: 4px 2px 0 6px;
+  border: var(--jp-border-width) solid var(--jp-cell-editor-border-color);
+  font-size: 0.775rem;
+}
+
+#jp-right-stack .jp-pretzelai-rendermime-markdown pre > code {
+  background-color: inherit;
+  overflow-x: inherit;
+  white-space: inherit;
+}
+
+#jp-right-stack .jp-pretzelai-rendermime-markdown mjx-container {
+  font-size: 119%;
+}
+
+.cm-placeholder {
+  white-space: pre-wrap; /* Preserve line breaks */
+}
+
+.monaco-diff-editor {
+  margin-left: 70px;
+}
+
+#jp-right-stack > .lm-Widget {
+  min-width: 450px !important;
+}
+
+#pretzelai-chat-panel .user-msg {
+  background-color: var(--jp-layout-color2);
+  padding-top: 10px;
+  padding-left: 16px;
+}
+
+#pretzelai-chat-panel .submit-button-container,
+#pretzelai-chat-panel .clear-button-container,
+#pretzelai-chat-panel .history-prev-button-container,
+#pretzelai-chat-panel .history-next-button-container {
+  position: relative;
+  display: inline-block;
+}
+
+#pretzelai-chat-panel .submit-button-container .tooltip,
+#pretzelai-chat-panel .clear-button-container .tooltip,
+#pretzelai-chat-panel .history-prev-button-container .tooltip,
+#pretzelai-chat-panel .history-next-button-container .tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-35%);
+  background-color: var(--jp-layout-color1);
+  color: var(--jp-ui-font-color1);
+  padding: 5px;
+  border-radius: var(--jp-border-radius);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  border: 1px solid var(--jp-border-color1);
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+#pretzelai-chat-panel .submit-button-container .tooltip {
+  transform: translateX(-25%) !important;
+}
+
+#pretzelai-chat-panel .submit-button-container:hover .tooltip,
+#pretzelai-chat-panel .clear-button-container:hover .tooltip,
+#pretzelai-chat-panel .history-prev-button-container:hover .tooltip,
+#pretzelai-chat-panel .history-next-button-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
